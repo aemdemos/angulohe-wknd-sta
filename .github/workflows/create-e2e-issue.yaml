@@ -1,0 +1,65 @@
+name: Daily E2E Test
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # every day at 5:00 am UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create GitHub Issue
+        id: create_issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const today = new Date().toISOString().split('T')[0];
+            const issueTitle = `AEMY Catalyze - ${today}`;
+            const issueBody = `Catalyze https://wknd.site/.`;
+
+            const response = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody,
+              labels: ['aemy-go', 'aemy-help', 'aemy-merge']
+            });
+            core.setOutput('issue_url', response.data.html_url);
+            core.setOutput('issue_title', response.data.title);
+            core.setOutput('issue_number', response.data.number);
+
+            console.log(`Created issue: ${response.data.html_url}`);
+      - name: Post Slack message for new issue
+        id: slack_notify
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          payload: |
+            {
+              "text": "*E2E Test Started for https://wknd.site/* :rocket:\nIssue created: <${{ steps.create_issue.outputs.issue_url }}|${{ steps.create_issue.outputs.issue_title }}>"
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      - name: Comment Slack thread timestamp on issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = Number(process.env.ISSUE_NUMBER);
+            const thread_ts = process.env.SLACK_THREAD_TS;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: `Slack thread_ts: ${thread_ts}`
+            });
+        env:
+          ISSUE_NUMBER: ${{ steps.create_issue.outputs.issue_number }}
+          SLACK_THREAD_TS: ${{ steps.slack_notify.outputs.ts }}
