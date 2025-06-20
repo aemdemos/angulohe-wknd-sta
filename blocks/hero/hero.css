@@ -45,3 +45,146 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero4 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100vw;
+  max-width: none;
+  min-height: 620px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero.hero4 > div:first-child {
+  flex: 1 1 60%;
+  min-width: 0;
+  order: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero.hero4 > div:first-child > div,
+.hero.hero4 > div:first-child picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero.hero4 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+.hero.hero4 > div:last-child {
+  flex: 1 1 40%;
+  min-width: 0;
+  order: 2;
+  background: #f5f5f5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero.hero4 > div:last-child > div {
+  width: 100%;
+  padding: 64px 54px 54px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Label ("Featured Article") */
+.hero.hero4 > div:last-child > div > p:first-child {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  margin: 0 0 28px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+/* Heading */
+.hero.hero4 h2 {
+  font-size: 2.55rem;
+  color: #111;
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  margin: 0 0 24px;
+  line-height: 1.13;
+}
+
+/* Description */
+.hero.hero4 > div:last-child > div > p:not(:first-child, .button-container) {
+  color: #555;
+  font-size: 1.16rem;
+  margin: 0 0 32px;
+  line-height: 1.8;
+  max-width: 40em;
+}
+
+/* Button Container */
+.hero.hero4 .button-container {
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+/* Button Style Override */
+.hero.hero4 .button {
+  background: #ffe500;
+  color: #222;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 0;
+  font-size: 1.15rem;
+  box-shadow: none;
+  margin: 0;
+  display: inline-block;
+  transition: background 0.2s;
+  line-height: 1.2;
+}
+
+.hero.hero4 .button:hover,
+.hero.hero4 .button:focus {
+  background: #ffdc00;
+  color: #222;
+  text-decoration: none;
+}
+
+/* Responsive: Stack on mobile */
+@media (width <= 900px) {
+  .hero.hero4 {
+    flex-direction: column;
+    min-height: 0;
+    width: 100vw;
+  }
+
+  .hero.hero4 > div:first-child,
+  .hero.hero4 > div:last-child {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    order: unset;
+  }
+
+  .hero.hero4 > div:last-child > div {
+    padding: 38px 16px 28px;
+  }
+
+  .hero.hero4 > div:first-child img {
+    min-height: 220px;
+    max-height: 320px;
+  }
+}
