@@ -1,4 +1,5 @@
 
+
 /* -------- TAB LIST -------- */
 .tabs .tabs-list {
   display: flex;
@@ -291,7 +292,6 @@
   outline-offset: 2px;
 }
 
-/* Restrict sidebar to compact width, align text left, lessen spacing */
 .tabs.tabs10 > div:first-child {
   flex: 0 0 130px;
   max-width: 130px;
@@ -335,7 +335,6 @@
   color: #222;
 }
 
-/* Main content: make wider and add padding for airiness */
 .tabs.tabs10 > .tabs-wrapper {
   flex: 1 1 0;
   min-width: 0;
@@ -349,7 +348,6 @@
   flex-direction: column;
 }
 
-/* Headings and yellow underline */
 .tabs.tabs10 .tabs-panel > div > h3:first-of-type {
   font-family: var(--heading-font-family);
   font-size: 2.25rem;
@@ -388,7 +386,6 @@
   margin-bottom: 0;
 }
 
-/* Paragraphs and list styles: more space below, more readable */
 .tabs.tabs10 .tabs-panel ul {
   margin: 34px 0 0 36px;
   color: #222;
@@ -400,7 +397,6 @@
   margin-bottom: 11px;
 }
 
-/* Images: even more vertical margin, rounded corners */
 .tabs.tabs10 .tabs-panel picture,
 .tabs.tabs10 .tabs-panel img {
   display: block;
@@ -414,13 +410,11 @@
   padding: 0;
 }
 
-/* Related trips: more margin above */
 .tabs.tabs10 .tabs-panel > div > p:last-of-type {
   margin-top: 38px;
   margin-bottom: 0;
 }
 
-/* Responsive: stack sidebar above main content, with less padding */
 @media (width <= 1000px) {
   .tabs.tabs10 {
     flex-direction: column;
@@ -453,7 +447,6 @@
   }
 }
 
-/* Merged .tabs.tabs10 selector */
 .tabs.tabs10 {
   display: flex;
   flex-direction: row;
@@ -467,8 +460,6 @@
   box-shadow: none;
 }
 
-/* --------- GENERATED CSS ----------- */
-
 .tabs.tabs11 {
   max-width: 1100px;
   margin: 56px auto 0;
@@ -478,7 +469,6 @@
   border: none;
 }
 
-/* Tabs navigation */
 .tabs.tabs11 .tabs-list {
   display: flex;
   gap: 0;
@@ -529,7 +519,6 @@
   padding: 0;
 }
 
-/* Remove default border/box from tab panels */
 .tabs.tabs11 .tabs-panel {
   border: none;
   background: none;
@@ -545,7 +534,6 @@
   display: block;
 }
 
-/* --- Title and yellow underline --- */
 .tabs.tabs11 .tabs-panel > div > h3:first-of-type {
   font-family: var(--heading-font-family);
   font-size: 2.4rem;
@@ -572,7 +560,6 @@
   content: "";
 }
 
-/* --- Image styling --- */
 .tabs.tabs11 .tabs-panel picture,
 .tabs.tabs11 .tabs-panel img {
   display: block;
@@ -586,7 +573,6 @@
   padding: 0;
 }
 
-/* --- Paragraphs and lists --- */
 .tabs.tabs11 .tabs-panel p,
 .tabs.tabs11 .tabs-panel ul {
   font-family: var(--body-font-family);
@@ -606,7 +592,6 @@
   margin-bottom: 8px;
 }
 
-/* --- Responsive adjustments --- */
 @media (width <= 900px) {
   .tabs.tabs11 {
     max-width: 99vw;
@@ -629,13 +614,11 @@
   }
 }
 
-/* --- Keyboard focus for accessibility --- */
 .tabs.tabs11 .tabs-tab:focus {
   outline: 2px solid #fe8;
   outline-offset: 2px;
 }
 
-/* --------- MERGED .tabs.tabs11 ----------- */
 .tabs.tabs11 {
   max-width: 1100px;
   margin: 56px auto 0;
@@ -643,4 +626,13 @@
   background: #fff;
   box-shadow: none;
   border: none;
+}
+
+.tabs.tabs21 {
+  max-width: 980px;
+  margin: 12px auto 0;
+  background: #fff;
+  border: none;
+  padding: 0 0 44px;
+  box-shadow: none;
 }
