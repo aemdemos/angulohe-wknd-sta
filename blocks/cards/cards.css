@@ -37,6 +37,14 @@
   object-fit: cover;
 }
 
+.cards.cards8 {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .cards {
   display: flex;
   justify-content: center;
@@ -127,4 +135,135 @@
 .cards .cards-card-body picture {
   margin: 0.5em 0;
   line-height: 0;
+}
+
+/* Generated CSS, except .cards.cards8 selector replaced below */
+.cards.cards8 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.cards.cards8 > ul > li {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+}
+
+.cards.cards8 .cards-card-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  background: none;
+}
+
+.cards.cards8 .cards-card-image picture,
+.cards.cards8 .cards-card-image img {
+  width: 100%;
+  display: block;
+}
+
+.cards.cards8 .cards-card-image img {
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* Remove horizontal padding so titles/descriptions are flush with image edge */
+.cards.cards8 .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: none;
+  padding: 4px 0 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Title: bold, large, uppercase, flush left */
+.cards.cards8 .cards-card-body .button-container {
+  margin: 0 0 4px;
+  padding: 0;
+  width: 100%;
+  line-height: 1.1;
+}
+
+.cards.cards8 .cards-card-body .button.primary {
+  background: none;
+  border: none;
+  color: #222;
+  font-family: var(--body-font-family);
+  font-size: 1.38rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  line-height: 1.05;
+  display: inline;
+  max-width: 100%;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 0;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Description: small, gray, one line, ellipsis */
+.cards.cards8 .cards-card-body p:not(.button-container) {
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  color: #7d7d7d;
+  font-weight: 400;
+  text-align: left;
+  margin: 7px 0 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  line-height: 1.5;
+}
+
+/* Remove extra spacing in card body */
+.cards.cards8 .cards-card-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive: stack cards on mobile */
+@media (width <= 900px) {
+  .cards.cards8 > ul {
+    flex-direction: column;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .cards.cards8 > ul > li {
+    max-width: 100%;
+  }
+
+  .cards.cards8 .cards-card-image img {
+    aspect-ratio: unset;
+    height: 180px;
+  }
 }
