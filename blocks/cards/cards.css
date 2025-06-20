@@ -1,19 +1,30 @@
 .cards > ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, Asar, "Times New Roman", Times, serif;
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .cards .cards-card-image {
@@ -24,4 +35,96 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (width <= 900px) {
+  .cards > ul {
+    max-width: 100%;
+    padding: 0 6px;
+  }
+}
+
+.cards .cards-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.cards .cards-card-body p {
+  margin-bottom: 0.9em;
+  margin-top: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.cards .cards-card-body h2 {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: 1.7em;
+  margin-bottom: 0.4em;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.cards .cards-card-body h2 u,
+.cards .cards-card-body strong em u {
+  text-decoration-color: #eabf3a;
+  text-underline-offset: 0.18em;
+}
+
+.cards .cards-card-body blockquote {
+  background: #faf9f7;
+  border-left: 3px solid #eabf3a;
+  padding: 1.2em 1.5em;
+  margin: 1.5em 0;
+  font-size: 1.07em;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+
+.cards .cards-card-body blockquote p {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.cards .cards-card-body strong em u {
+  font-style: italic;
+  font-size: 0.75em;
+  color: #888;
+  display: block;
+  margin-top: 0.05em;
+  margin-bottom: 0.05em;
+}
+
+.cards .cards-card-body img,
+.cards .cards-card-body picture,
+.cards .cards-card-body source {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0.5em 0;
+  object-fit: unset;
+  aspect-ratio: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cards .cards-card-body picture {
+  margin: 0.5em 0;
+  line-height: 0;
 }
