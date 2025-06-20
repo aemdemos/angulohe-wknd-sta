@@ -1,3 +1,4 @@
+
 /* -------- TAB LIST -------- */
 .tabs .tabs-list {
   display: flex;
@@ -464,4 +465,182 @@
   background: #fff;
   border: none;
   box-shadow: none;
+}
+
+/* --------- GENERATED CSS ----------- */
+
+.tabs.tabs11 {
+  max-width: 1100px;
+  margin: 56px auto 0;
+  padding: 0 0 48px;
+  background: #fff;
+  box-shadow: none;
+  border: none;
+}
+
+/* Tabs navigation */
+.tabs.tabs11 .tabs-list {
+  display: flex;
+  gap: 0;
+  border: none;
+  margin: 0 0 40px;
+  padding: 0;
+  background: none;
+  overflow: visible;
+}
+
+.tabs.tabs11 .tabs-tab {
+  background: #fff;
+  color: #222;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 1.13rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 0;
+  margin: 0 16px 0 0;
+  padding: 14px 36px 12px 0;
+  box-shadow: none;
+  border-bottom: 3px solid transparent;
+  transition: background 0.18s, color 0.18s, border-bottom 0.18s;
+  outline: none;
+  min-width: 120px;
+  text-align: left;
+  line-height: 1.2;
+  cursor: pointer;
+  position: relative;
+}
+
+.tabs.tabs11 .tabs-tab[aria-selected="true"] {
+  background: #222;
+  color: #fff;
+  border-bottom: 3px solid #fe8;
+  z-index: 2;
+}
+
+.tabs.tabs11 .tabs-tab:not([aria-selected="true"]) {
+  background: #fff;
+  color: #222;
+}
+
+.tabs.tabs11 .tabs-tab p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default border/box from tab panels */
+.tabs.tabs11 .tabs-panel {
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  max-width: 100%;
+  overflow: visible;
+  display: none;
+}
+
+.tabs.tabs11 .tabs-panel[aria-hidden="false"] {
+  display: block;
+}
+
+/* --- Title and yellow underline --- */
+.tabs.tabs11 .tabs-panel > div > h3:first-of-type {
+  font-family: var(--heading-font-family);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #222;
+  margin: 0 0 12px;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  padding-bottom: 0;
+  border-bottom: none;
+  position: relative;
+  display: inline-block;
+}
+
+.tabs.tabs11 .tabs-panel > div > h3:first-of-type::after {
+  display: block;
+  width: 62px;
+  height: 3px;
+  background: #fe8;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  content: "";
+}
+
+/* --- Image styling --- */
+.tabs.tabs11 .tabs-panel picture,
+.tabs.tabs11 .tabs-panel img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 34px 0 26px;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+}
+
+/* --- Paragraphs and lists --- */
+.tabs.tabs11 .tabs-panel p,
+.tabs.tabs11 .tabs-panel ul {
+  font-family: var(--body-font-family);
+  font-size: 1.13rem;
+  color: #222;
+  line-height: 1.7;
+  margin: 0 0 22px;
+  font-weight: 400;
+  max-width: 900px;
+}
+
+.tabs.tabs11 .tabs-panel ul {
+  padding-left: 1.7em;
+}
+
+.tabs.tabs11 .tabs-panel li {
+  margin-bottom: 8px;
+}
+
+/* --- Responsive adjustments --- */
+@media (width <= 900px) {
+  .tabs.tabs11 {
+    max-width: 99vw;
+    padding: 0 4vw 32px;
+  }
+
+  .tabs.tabs11 .tabs-list {
+    margin-bottom: 26px;
+  }
+
+  .tabs.tabs11 .tabs-tab {
+    font-size: 1rem;
+    padding: 10px 12px 8px 0;
+    min-width: 90px;
+  }
+
+  .tabs.tabs11 .tabs-panel > div > h3:first-of-type {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+}
+
+/* --- Keyboard focus for accessibility --- */
+.tabs.tabs11 .tabs-tab:focus {
+  outline: 2px solid #fe8;
+  outline-offset: 2px;
+}
+
+/* --------- MERGED .tabs.tabs11 ----------- */
+.tabs.tabs11 {
+  max-width: 1100px;
+  margin: 56px auto 0;
+  padding: 0 0 48px;
+  background: #fff;
+  box-shadow: none;
+  border: none;
 }
