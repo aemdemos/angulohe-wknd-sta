@@ -99,6 +99,33 @@
   line-height: 1.2;
 }
 
+.tabs.tabs10 .tabs-tab {
+  display: block;
+  width: 100%;
+  background: #fff;
+  color: #222;
+  font-family: var(--body-font-family);
+  font-size: 1.07rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: 0;
+  margin: 0 0 4px;
+  padding: 10px 0;
+  box-shadow: none;
+  border-left: 4px solid transparent;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  transition: background 0.18s, color 0.18s, border-left 0.18s;
+  outline: none;
+  text-align: left;
+  line-height: 1.2;
+  cursor: pointer;
+  position: relative;
+}
+
 .tabs.tabs7 .tabs-tab[aria-selected="true"] {
   background: #111;
   color: #fff;
@@ -170,6 +197,17 @@
   padding-bottom: 0;
 }
 
+.tabs.tabs10 .tabs-panel h3:not(:first-of-type) {
+  font-family: var(--heading-font-family);
+  font-size: 1.19rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 17px;
+  line-height: 1.26;
+  border: none;
+  padding-bottom: 0;
+}
+
 .tabs.tabs7 .tabs-panel h3:first-of-type + h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -182,6 +220,16 @@
   line-height: 1.9;
   margin: 0;
   padding: 0;
+}
+
+.tabs.tabs10 .tabs-panel p {
+  font-family: var(--body-font-family);
+  font-size: 1.11rem;
+  color: #222;
+  line-height: 1.82;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 760px;
 }
 
 .tabs.tabs7 .tabs-panel h3:not(:first-of-type) + p {
@@ -240,4 +288,180 @@
 .tabs.tabs7 .tabs-tab:focus {
   outline: 2px solid #ffe066;
   outline-offset: 2px;
+}
+
+/* Restrict sidebar to compact width, align text left, lessen spacing */
+.tabs.tabs10 > div:first-child {
+  flex: 0 0 130px;
+  max-width: 130px;
+  min-width: 110px;
+  padding: 0;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  border: none;
+}
+
+.tabs.tabs10 .tabs-list {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.tabs.tabs10 > div:first-child .tabs-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.tabs.tabs10 .tabs-tab[aria-selected="true"] {
+  background: #fff;
+  color: #000;
+  border-left: 4px solid #ffd600;
+}
+
+.tabs.tabs10 .tabs-tab:not([aria-selected="true"]) {
+  background: #fff;
+  color: #222;
+}
+
+/* Main content: make wider and add padding for airiness */
+.tabs.tabs10 > .tabs-wrapper {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 1000px;
+  padding: 0 32px;
+  margin: 0;
+  border: none;
+  background: #fff;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings and yellow underline */
+.tabs.tabs10 .tabs-panel > div > h3:first-of-type {
+  font-family: var(--heading-font-family);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px;
+  line-height: 1.17;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.tabs.tabs10 .tabs-panel > div > h3:first-of-type::after {
+  display: block;
+  width: 62px;
+  height: 0;
+  border-bottom: 4px solid #ffd600;
+  margin-top: 13px;
+  margin-bottom: 32px;
+  content: "";
+}
+
+.tabs.tabs10 .tabs-panel > div > h2 {
+  font-family: var(--heading-font-family);
+  font-size: 2.13rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 38px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.tabs.tabs10 .tabs-panel h3:first-of-type + h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Paragraphs and list styles: more space below, more readable */
+.tabs.tabs10 .tabs-panel ul {
+  margin: 34px 0 0 36px;
+  color: #222;
+  font-size: 1.04rem;
+  list-style: disc;
+}
+
+.tabs.tabs10 .tabs-panel ul li {
+  margin-bottom: 11px;
+}
+
+/* Images: even more vertical margin, rounded corners */
+.tabs.tabs10 .tabs-panel picture,
+.tabs.tabs10 .tabs-panel img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 48px 0;
+  border-radius: 12px;
+  box-shadow: none;
+  background: none;
+  padding: 0;
+}
+
+/* Related trips: more margin above */
+.tabs.tabs10 .tabs-panel > div > p:last-of-type {
+  margin-top: 38px;
+  margin-bottom: 0;
+}
+
+/* Responsive: stack sidebar above main content, with less padding */
+@media (width <= 1000px) {
+  .tabs.tabs10 {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    max-width: 99vw;
+  }
+
+  .tabs.tabs10 > div:first-child,
+  .tabs.tabs10 > .tabs-wrapper {
+    max-width: 100%;
+    min-width: 0;
+    padding: 0 10px;
+  }
+
+  .tabs.tabs10 .tabs-panel picture,
+  .tabs.tabs10 .tabs-panel img {
+    border-radius: 7px;
+    margin: 22px 0;
+  }
+
+  .tabs.tabs10 .tabs-panel > div > h3:first-of-type {
+    font-size: 1.13rem;
+    margin-bottom: 6px;
+  }
+
+  .tabs.tabs10 .tabs-panel > div > h2 {
+    font-size: 1.08rem;
+    margin-bottom: 16px;
+  }
+}
+
+/* Merged .tabs.tabs10 selector */
+.tabs.tabs10 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 56px auto 0;
+  padding: 0 32px;
+  gap: 0;
+  background: #fff;
+  border: none;
+  box-shadow: none;
 }
