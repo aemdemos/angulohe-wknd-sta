@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--sta-wknd-sharepoint-e2e--aemdemos.aem.live/
-- After: https://<branch>--sta-wknd-sharepoint-e2e--aemdemos.aem.live/
+- Before: https://main--angulohe-wknd-sta--aemdemos.aem.live/
+- After: https://<branch>--angulohe-wknd-sta--aemdemos.aem.live/
