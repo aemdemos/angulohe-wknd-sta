@@ -31,3 +31,188 @@
     order: unset;
   }
 }
+
+
+.columns.columns5 {
+  background: #232220;
+  color: #f5f5f5;
+  padding: 40px 60px 32px;
+  border-bottom: 2px solid #fff;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Main grid: left (logo/text), right (follow/buttons) */
+.columns.columns5 .columns-4-cols {
+  display: grid;
+  grid-template-columns: 360px auto;
+  gap: 48px;
+  align-items: start;
+  width: 100%;
+}
+
+/* Left column: vertical stack */
+.columns.columns5 .columns-4-cols > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+}
+
+/* Logo styling */
+.columns.columns5 .columns-img-col img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Language List */
+.columns.columns5 .columns-img-col + div ul {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.columns.columns5 .columns-img-col + div ul li {
+  margin: 0;
+}
+
+.columns.columns5 .columns-img-col + div ul li a {
+  color: #f5f5f5;
+  font-size: 14px;
+  text-decoration: none;
+  padding-left: 0;
+}
+
+/* --- RIGHT COLUMN: group "Follow Us" and social buttons as a single flex row --- */
+.columns.columns5 .columns-4-cols > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 16px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 0;
+}
+
+/* "Follow Us" label and buttons: force horizontal grouping by making both sibling divs and their children row flex */
+.columns.columns5 .columns-4-cols > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+/* "Follow Us" label */
+.columns.columns5 #follow-us {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #f5f5f5;
+  padding: 0;
+  align-self: center;
+  margin: 0;
+}
+
+/* Social Buttons - horizontal */
+.columns.columns5 .button-container {
+  margin: 0;
+  display: block;
+}
+
+.columns.columns5 .button-container .button {
+  background: #f5f5f5;
+  color: #232220;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 100px;
+  margin: 0;
+  padding: 10px 24px;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+}
+
+.columns.columns5 .button-container .button:hover,
+.columns.columns5 .button-container .button:focus {
+  background: #e0e0e0;
+  color: #232220;
+}
+
+/* --- MAIN TEXT COLUMN (PARAGRAPHS) --- */
+.columns.columns5 .columns-4-cols > div:first-child > div:last-of-type {
+  margin-top: 16px;
+}
+
+.columns.columns5 .columns-4-cols > div:first-child p,
+.columns.columns5 .columns-4-cols > div:first-child a,
+.columns.columns5 .columns-4-cols > div:nth-child(2) a {
+  color: #f5f5f5;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.columns.columns5 .columns-4-cols > div:first-child p {
+  margin: 0 0 0.6em;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Responsiveness for narrow screens */
+@media (width <= 900px) {
+  .columns.columns5 {
+    padding: 32px 16px 24px;
+  }
+
+  .columns.columns5 .columns-4-cols {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .columns.columns5 .columns-4-cols > div:first-child,
+  .columns.columns5 .columns-4-cols > div:nth-child(2) {
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .columns.columns5 .columns-4-cols > div:nth-child(2) {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .columns.columns5 .columns-4-cols > div:nth-child(2) > div {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (width <= 700px) {
+  .columns.columns5 {
+    padding: 16px 4px 12px;
+  }
+
+  .columns.columns5 .columns-4-cols {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
