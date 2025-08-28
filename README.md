@@ -5,8 +5,8 @@ E2E Sharepoint test for site: https://wknd.site/
 
 ## Environments
 
-- Preview: https://main--sta-wknd-sharepoint-e2e--aemdemos.aem.page/
-- Live: https://main--sta-wknd-sharepoint-e2e--aemdemos.aem.live/
+- Preview: https://main--angulohe-wknd-sta--aemdemos.aem.page/
+- Live: https://main--angulohe-wknd-sta--aemdemos.aem.live/
 
 ## Installation
 
