@@ -1,4 +1,4 @@
-/* search box */
+/* stylelint-disable no-descending-specificity */
 .search .search-box {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -24,7 +24,6 @@
   border: 1px solid var(--text-color);
 }
 
-/* search results */
 .search ul.search-results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
@@ -79,7 +78,6 @@
   object-fit: cover;
 }
 
-/* no results */
 .search ul.search-results.no-results {
   display: block;
   margin-left: 34px;
@@ -89,7 +87,6 @@
   border: none;
 }
 
-/* minimal variant */
 .search.minimal ul.search-results {
   display: block;
   padding-left: 34px;
@@ -109,7 +106,6 @@
   color: var(--link-color);
 }
 
-/* stylelint-disable no-descending-specificity */
 .search.minimal ul.search-results > li > a {
   background-color: unset;
 }
@@ -134,4 +130,93 @@
   height: 24px;
   width: 24px;
   border-radius: 50%;
+}
+
+
+.search.search2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 74px;
+  height: 74px;
+  background: #fff;
+  box-sizing: border-box;
+
+  /* Simulate left-side whitespace for missing branding */
+  padding-left: 128px;
+  padding-top: 7px;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.search.search2 > .search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 2px;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 2.5%);
+  padding: 9px 22px;
+  width: 180px;
+  min-width: 0;
+  margin-top: 0;
+  margin-right: 34px;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.search.search2 .icon-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+}
+
+.search.search2 .icon-search img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: grayscale(100%) brightness(0);
+}
+
+.search.search2 .search-input {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: #222;
+  outline: none;
+  width: 120px;
+  min-width: 0;
+  padding: 0;
+}
+
+.search.search2 .search-input::placeholder {
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* Hide the search results list by default */
+.search.search2 .search-results {
+  display: none;
+}
+
+@media (width <= 700px) {
+  .search.search2 {
+    padding-left: 24px;
+    min-height: 56px;
+    height: 56px;
+    padding-top: 4px;
+  }
+
+  .search.search2 > .search-box {
+    margin-right: 8px;
+    width: 100%;
+    max-width: 260px;
+  }
 }
