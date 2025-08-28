@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -43,7 +44,6 @@
   line-height: 1.6;
 }
 
-/* Main grid: left (logo/text), right (follow/buttons) */
 .columns.columns5 .columns-4-cols {
   display: grid;
   grid-template-columns: 360px auto;
@@ -52,7 +52,6 @@
   width: 100%;
 }
 
-/* Left column: vertical stack */
 .columns.columns5 .columns-4-cols > div:first-child {
   display: flex;
   flex-direction: column;
@@ -61,7 +60,6 @@
   min-width: 0;
 }
 
-/* Logo styling */
 .columns.columns5 .columns-img-col img {
   width: 120px;
   height: auto;
@@ -69,7 +67,6 @@
   display: block;
 }
 
-/* Language List */
 .columns.columns5 .columns-img-col + div ul {
   list-style: none;
   margin: 0 0 18px;
@@ -87,7 +84,6 @@
   padding-left: 0;
 }
 
-/* --- RIGHT COLUMN: group "Follow Us" and social buttons as a single flex row --- */
 .columns.columns5 .columns-4-cols > div:nth-child(2) {
   display: flex;
   flex-direction: row;
@@ -100,7 +96,6 @@
   padding-top: 0;
 }
 
-/* "Follow Us" label and buttons: force horizontal grouping by making both sibling divs and their children row flex */
 .columns.columns5 .columns-4-cols > div:nth-child(2) > div {
   display: flex;
   flex-direction: row;
@@ -110,7 +105,6 @@
   padding: 0;
 }
 
-/* "Follow Us" label */
 .columns.columns5 #follow-us {
   font-family: inherit;
   font-size: 15px;
@@ -123,7 +117,6 @@
   margin: 0;
 }
 
-/* Social Buttons - horizontal */
 .columns.columns5 .button-container {
   margin: 0;
   display: block;
@@ -149,7 +142,6 @@
   color: #232220;
 }
 
-/* --- MAIN TEXT COLUMN (PARAGRAPHS) --- */
 .columns.columns5 .columns-4-cols > div:first-child > div:last-of-type {
   margin-top: 16px;
 }
@@ -168,7 +160,6 @@
   line-height: 1.6;
 }
 
-/* Responsiveness for narrow screens */
 @media (width <= 900px) {
   .columns.columns5 {
     padding: 32px 16px 24px;
@@ -214,5 +205,163 @@
   .columns.columns5 .columns-4-cols {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+
+.columns > .columns5 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Sidebar: vertical stack, very tight */
+.columns > .columns5 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  padding-top: 0;
+}
+
+/* Logo */
+.columns .columns-img-col img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2px;
+  display: block;
+}
+
+/* Language selector (minimal space) */
+.columns > .columns5 > div:first-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2px;
+}
+
+.columns > .columns5 > div:first-child ul li {
+  margin: 0;
+}
+
+.columns > .columns5 > div:first-child ul li a {
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* "Follow Us" section, minimal margin */
+.columns > .columns5 > div:first-child h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 8px 0 2px;
+  align-self: flex-start;
+
+  /* tight to the social row */
+}
+
+/* SOCIAL BUTTONS: HORIZONTAL ROW, NO VERTICAL STACKING */
+.columns > .columns5 > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+/* Remove default margin/padding from button containers for horizontal row */
+.columns .button-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Compact, square social buttons */
+.columns .button-container .button {
+  background: #fff;
+  color: #222;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: visible;
+  transition: background 0.2s;
+  margin: 0;
+}
+
+.columns .button-container .button:hover,
+.columns .button-container .button:focus {
+  background: #e0e0e0;
+  color: #222;
+}
+
+/* Main content column: vertical stack, no unnecessary margin */
+.columns > .columns5 > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  justify-content: flex-start;
+}
+
+.columns > .columns5 > div:last-child p {
+  margin: 0 0 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* Links in text area */
+.columns > .columns5 > div:last-child a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.columns > .columns5 > div:last-child a:hover,
+.columns > .columns5 > div:last-child a:focus {
+  color: #ffae00;
+}
+
+/* Responsive: stack columns, reduce spacing on mobile */
+@media (width <= 900px) {
+  .columns {
+    padding: 24px 10px;
+  }
+
+  .columns > .columns5 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .columns > .columns5 > div:first-child {
+    width: 100%;
+  }
+
+  .columns .columns-img-col img {
+    width: 120px;
   }
 }
