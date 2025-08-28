@@ -60,7 +60,6 @@
 
 
 .tabs.tabs3 {
-  /* Grid layout: sidebar for vertical tabs, main for all content stacked */
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 48px;
@@ -77,7 +76,6 @@
   }
 }
 
-/* Sidebar: vertical tab stack, align left, add spacing */
 .tabs.tabs3 > .tabs-list {
   display: flex;
   flex-direction: column;
@@ -102,7 +100,6 @@
   }
 }
 
-/* Vertical tab list in sidebar */
 .tabs.tabs3 .tabs-list[role="tablist"] {
   display: flex;
   flex-direction: column;
@@ -114,7 +111,6 @@
   margin: 0;
 }
 
-/* Tab buttons: fill sidebar width, spacing */
 .tabs.tabs3 .tabs-tab {
   background: transparent;
   border: none;
@@ -141,7 +137,6 @@
   color: #fff;
 }
 
-/* Main content area: stack all children vertically, aligned left, max width */
 .tabs.tabs3 > .tabs-panel {
   display: flex;
   flex-direction: column;
@@ -163,7 +158,6 @@
   }
 }
 
-/* Title styling: large, serif, underline */
 .tabs.tabs3 h3 {
   font-size: 2em;
   color: #2D2D2D;
@@ -177,7 +171,6 @@
   padding-bottom: 8px;
 }
 
-/* Image: wide, margin bottom */
 .tabs.tabs3 picture,
 .tabs.tabs3 img {
   width: 100%;
@@ -189,7 +182,6 @@
   display: block;
 }
 
-/* Headline and text */
 .tabs.tabs3 p > strong,
 .tabs.tabs3 strong {
   display: block;
@@ -220,7 +212,6 @@
   font-family: var(--body-font-family);
 }
 
-/* Remove unwanted borders and background from all direct children */
 .tabs.tabs3 > .tabs-panel,
 .tabs.tabs3 > .tabs-list,
 .tabs.tabs3 .tabs-tab {
@@ -229,7 +220,144 @@
   box-shadow: none;
 }
 
-/* Hide inactive panels */
 .tabs.tabs3 .tabs-panel[aria-hidden="true"] {
   display: none;
+}
+
+
+.tabs.tabs7 {
+  /* Flush left, no unnecessary margins, fill container on desktop */
+  max-width: 100%;
+  width: 100%;
+  margin: 40px 0 0;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Tabs row: left aligned, minimal vertical spacing, edge aligned */
+.tabs.tabs7 .tabs-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 28px;
+  margin: 0 0 10px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+/* Tabs: prominent, uniform spacing, left aligned, slightly larger touch targets */
+.tabs.tabs7 .tabs-tab {
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: #222;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+  padding: 12px 36px 10px 0;
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
+  cursor: pointer;
+  min-width: 120px;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.tabs.tabs7 .tabs-tab[aria-selected="true"] {
+  background: #222;
+  color: #fff;
+  border: none;
+}
+
+.tabs.tabs7 .tabs-tab p {
+  margin: 0;
+}
+
+/* Content: maximize width, left alignment, no centering */
+.tabs.tabs7 .tabs-panel {
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  background: transparent;
+  margin-top: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.tabs.tabs7 .tabs-panel > div {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Headings: strong, left-aligned, tighter vertical rhythm */
+.tabs.tabs7 .tabs-panel h3 {
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin: 20px 0 10px;
+  line-height: 1.2;
+}
+
+/* Paragraphs: tight bottom margin, readable */
+.tabs.tabs7 .tabs-panel p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 7px;
+}
+
+/* Images: expand to full width, flush left, minimal top margin, no right margin */
+.tabs.tabs7 .tabs-panel picture,
+.tabs.tabs7 .tabs-panel img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  margin: 14px 0 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Lists: tight and left-aligned */
+.tabs.tabs7 .tabs-panel ul {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 12px;
+  padding-left: 18px;
+}
+
+.tabs.tabs7 .tabs-panel ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (width <= 900px) {
+  .tabs.tabs7 {
+    max-width: 100%;
+    margin: 24px 0 0;
+    padding: 0 4px;
+  }
+
+  .tabs.tabs7 .tabs-list {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .tabs.tabs7 .tabs-tab {
+    padding: 10px 8px 8px 0;
+    min-width: 80px;
+    font-size: 13px;
+  }
+
+  .tabs.tabs7 .tabs-panel picture,
+  .tabs.tabs7 .tabs-panel img {
+    margin: 12px 0 0;
+  }
 }
