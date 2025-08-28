@@ -2,7 +2,6 @@
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -58,4 +57,87 @@
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+
+.accordion.accordion13 {
+  /* Let the block fill its container width naturally, no floating or excess width */
+  width: 100%;
+  max-width: 740px;
+  margin: 48px 0;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Accordion item styling */
+.accordion.accordion13 details {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  background: #fff;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+.accordion.accordion13 details:last-child {
+  border-bottom: none;
+}
+
+.accordion.accordion13 details summary {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #101010;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 18px 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.accordion.accordion13 details summary p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
+/* No background on interaction */
+.accordion.accordion13 details[open] summary,
+.accordion.accordion13 details summary:focus,
+.accordion.accordion13 details summary:hover {
+  background: none;
+}
+
+/* Body padding and style */
+.accordion.accordion13 details .accordion-item-body {
+  padding: 0 16px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .accordion.accordion13 {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 32px 0;
+  }
 }
