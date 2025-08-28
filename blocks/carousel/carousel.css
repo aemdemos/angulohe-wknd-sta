@@ -205,7 +205,6 @@
   background: #ffef70;
 }
 
-/* Page indicators - finally reintroduced and visually compact */
 .carousel.carousel6 .carousel-slide-indicators {
   display: flex;
   position: absolute;
@@ -247,7 +246,6 @@
   border: none;
 }
 
-/* Navigation buttons - flush with bottom-right edge and slightly smaller gap */
 .carousel.carousel6 .carousel-navigation-buttons {
   position: absolute;
   inset: auto 8px 8px auto;
@@ -295,7 +293,6 @@
   cursor: not-allowed;
 }
 
-/* Custom arrow icons */
 .carousel.carousel6 .carousel-navigation-buttons button::after {
   border: none;
   width: 0;
@@ -323,4 +320,121 @@
 
 .carousel.carousel6 .slide-next::before {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.carousel.carousel14 {
+  position: relative;
+  background: #fff;
+}
+
+/* --- SLIDES CONTAINER: Add space for controls bar --- */
+.carousel.carousel14 .carousel-slides-container {
+  position: relative;
+  margin-bottom: 54px;
+}
+
+/* --- ALWAYS SHOW SLIDE INDICATORS AND NAV BUTTONS --- */
+.carousel.carousel14 .carousel-slide-indicators {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -44px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  min-height: 44px;
+  background: #fff;
+  z-index: 11;
+  border-top: 1px solid #eee;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 3%);
+}
+
+/* Center indicators dot(s) horizontally */
+.carousel.carousel14 .carousel-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #bdbdbd;
+  margin: 0 4px;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s;
+  opacity: 1;
+  pointer-events: auto;
+  outline: none;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button:disabled,
+.carousel.carousel14 .carousel-slide-indicator button[aria-current="true"] {
+  background: #222;
+}
+
+/* --- NAVIGATION BUTTONS: right aligned in control bar --- */
+.carousel.carousel14 .carousel-navigation-buttons {
+  display: flex;
+  position: absolute;
+  inset: auto 16px -44px auto;
+  min-height: 44px;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  z-index: 12;
+  pointer-events: auto;
+}
+
+/* Minimal arrow buttons in the white bar */
+.carousel.carousel14 .carousel-navigation-buttons button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+  margin: 0 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.carousel.carousel14 .carousel-navigation-buttons button:focus-visible {
+  outline: 2px solid #222;
+}
+
+.carousel.carousel14 .carousel-navigation-buttons button::after {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #444;
+  border-right: 2px solid #444;
+  margin: auto;
+}
+
+.carousel.carousel14 .carousel-navigation-buttons button.slide-prev::after {
+  transform: rotate(-135deg);
+}
+
+.carousel.carousel14 .carousel-navigation-buttons button.slide-next::after {
+  transform: rotate(45deg);
+}
+
+.carousel.carousel14 .carousel-navigation-buttons button span {
+  display: none;
+}
+
+/* --- HIDE SLIDE CONTENT OVERLAY IF EMPTY --- */
+.carousel.carousel14 .carousel-slide-content:empty {
+  display: none;
+}
+
+/* --- REMOVE PREVIOUS CONTROLS BAR HACKS, FORCE CONTROLS BAR LOOK --- */
+.carousel.carousel14 .carousel-controls-bar,
+.carousel.carousel14 .carousel-controls-bar-fake {
+  display: none;
 }
