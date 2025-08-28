@@ -1,4 +1,5 @@
 /* stylelint-disable no-descending-specificity */
+
 .search .search-box {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -133,90 +134,92 @@
 }
 
 
-.search.search2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-start;
-  width: 100%;
-  min-height: 74px;
-  height: 74px;
-  background: #fff;
-  box-sizing: border-box;
+/* Final optimized EDS header CSS — best of iterations 0–2, refined for accuracy and responsiveness */
 
-  /* Simulate left-side whitespace for missing branding */
-  padding-left: 128px;
-  padding-top: 7px;
-  padding-bottom: 0;
-  position: relative;
+/* Foundation (required) */
+header nav { padding: 12px 16px; gap: 12px; flex-wrap: wrap; }
+header { display: flex; height: var(--nav-height); background: #fff; width: 100%; }
+.header-wrapper .nav-wrapper { justify-content: center; align-items: center; position: fixed; z-index: 2; top: 0; left: 0; right: 0; background-color: #fff; }
+header nav .nav-hamburger { display: none; visibility: hidden; }
+
+/* Fix only the nav-wrapper; keep solid white background */
+
+/* Header sizing and background */
+:root { --nav-height: 112px; }
+
+/* Nav container */
+
+/* Flex buckets: brand left, right area to the end */
+header nav .nav-brand { order: 1; flex: 0 0 auto; display: flex; align-items: center; min-width: 140px; }
+header nav .nav-sections { order: 3; flex: 1 1 100%; justify-content: flex-start; }
+header nav .nav-tools { order: 4; flex: 1 1 100%; }
+
+/* Brand: show image if present; otherwise render a WKND text wordmark; hide the demo locale list */
+header nav .nav-brand picture img,
+header nav .nav-brand img,
+header nav .nav-brand svg { height: 36px; width: auto; object-fit: contain; display: block; }
+header nav .nav-brand .default-content-wrapper { display: none; }
+
+/* Text fallback wordmark */
+header nav .nav-brand::before { content: "WKND"; display: inline-block; font-weight: 800; font-size: 32px; line-height: 1; letter-spacing: .02em; color: #000; }
+
+/* If a logo exists, drop the fallback */
+header nav .nav-brand:has(img), header nav .nav-brand:has(picture), header nav .nav-brand:has(svg) { position: relative; }
+header nav .nav-brand:has(img)::before, header nav .nav-brand:has(picture)::before, header nav .nav-brand:has(svg)::before { content: none; }
+
+/* Right area: only the gray search pill is visible from provided HTML */
+header nav .nav-sections .default-content-wrapper { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin: 0; }
+header nav .nav-sections .default-content-wrapper > p { margin: 0; }
+
+/* Hide demo "Welcome Sign In/Out" text line to match original (do not hide .nav-tools) */
+header nav .nav-sections .default-content-wrapper > p:first-of-type { display: none; }
+
+/* Pill styling for a link/button labeled like search (works for .nav-sections or .nav-tools) */
+header nav .nav-sections .button,
+header nav .nav-tools .button { position: relative; box-shadow: none; border: 0; border-radius: 2px; background: #f2f2f2; color: #222; padding: 10px 16px 10px 40px; margin: 0; min-height: 40px; line-height: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: .02em; }
+
+header nav .nav-sections .button:hover,
+header nav .nav-sections .button:focus,
+header nav .nav-tools .button:hover,
+header nav .nav-tools .button:focus { background: #ececec; text-decoration: none; }
+
+header nav .nav-sections .button::before,
+header nav .nav-tools .button::before { content: ""; position: absolute; left: 14px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>") no-repeat center/16px 16px; }
+
+/* If a real search input is used inside tools, match pill look */
+header nav .nav-tools input[type="search"] { appearance: none; border: 0; background: #f2f2f2; border-radius: 2px; padding: 10px 16px 10px 40px; min-height: 40px; font-size: 14px; color: #222; outline: none; width: 240px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>"); background-repeat: no-repeat; background-position: 14px 50%; background-size: 16px 16px; }
+header nav .nav-tools input[type="search"]::placeholder { color: #777; text-transform: uppercase; letter-spacing: .02em; }
+
+/* Optional nav links if present in .nav-sections */
+header nav .nav-sections ul, header nav .nav-sections ol { list-style: none; display: flex; gap: 24px; padding: 0; margin: 0; }
+header nav .nav-sections li > a { color: #111; text-decoration: none; padding: 8px 4px; border-radius: 4px; }
+header nav .nav-sections li > a:hover { text-decoration: underline; }
+
+/* Accessibility focus */
+header nav a:focus-visible, header nav button:focus-visible, header nav input[type="search"]:focus-visible { outline: 2px solid #1d3ecf; outline-offset: 2px; }
+
+/* Remove unwanted artifacts */
+.header-wrapper .nav-wrapper, header, header nav { border: 0; box-shadow: none; }
+
+/* Mobile / tablet */
+@media (width <= 899px) {
+  :root { --nav-height: 112px; }
+  header nav { padding: 12px 16px; gap: 12px; flex-wrap: wrap; }
+
+  /* Show hamburger on mobile for EDS behavior */
+  header nav .nav-hamburger { display: block; visibility: visible; order: 1; }
+  header nav .nav-hamburger button { width: 44px; height: 44px; border: 0; background: transparent; }
+  header nav .nav-brand { order: 2; }
+  header nav .nav-sections { order: 3; flex: 1 1 100%; justify-content: flex-start; }
+  header nav .nav-tools { order: 4; flex: 1 1 100%; }
+
+  /* Touch targets >=44px and full width when stacked */
+  header nav .nav-sections .button,
+  header nav .nav-tools .button,
+  header nav .nav-tools input[type="search"] { width: 100%; min-height: 44px; font-size: 16px; }
+  header nav .nav-sections ul, header nav .nav-sections ol { gap: 16px; flex-wrap: wrap; }
 }
 
-.search.search2 > .search-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: #f5f5f5;
-  border-radius: 2px;
-  box-shadow: 0 1px 8px rgb(0 0 0 / 2.5%);
-  padding: 9px 22px;
-  width: 180px;
-  min-width: 0;
-  margin-top: 0;
-  margin-right: 34px;
-  margin-left: 0;
-  box-sizing: border-box;
-}
-
-.search.search2 .icon-search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  margin-right: 7px;
-}
-
-.search.search2 .icon-search img {
-  width: 16px;
-  height: 16px;
-  display: block;
-  filter: grayscale(100%) brightness(0);
-}
-
-.search.search2 .search-input {
-  border: none;
-  background: transparent;
-  font-size: 13px;
-  color: #222;
-  outline: none;
-  width: 120px;
-  min-width: 0;
-  padding: 0;
-}
-
-.search.search2 .search-input::placeholder {
-  color: #aaa;
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 1;
-}
-
-/* Hide the search results list by default */
-.search.search2 .search-results {
-  display: none;
-}
-
-@media (width <= 700px) {
-  .search.search2 {
-    padding-left: 24px;
-    min-height: 56px;
-    height: 56px;
-    padding-top: 4px;
-  }
-
-  .search.search2 > .search-box {
-    margin-right: 8px;
-    width: 100%;
-    max-width: 260px;
-  }
-}
+/* Prevent image stretching in header buckets */
+header nav .nav-brand picture, header nav .nav-tools picture { display: inline-flex; }
+header nav .nav-brand picture img, header nav .nav-tools picture img { object-fit: contain; }
